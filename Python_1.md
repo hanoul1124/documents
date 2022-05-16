@@ -1,7 +1,7 @@
 # Python_1
 
   
-
+<br>
 ### Duck Typing
 
 #### 참조: https://nesoy.github.io/articles/2018-02/Duck-Typing
@@ -36,7 +36,7 @@
     ```
 
       
-
+<br>
     
 
 ### Python은 모든 것이 객체(Object)
@@ -51,11 +51,11 @@ n2 = n1참조 : https://kukuta.tistory.com/306
 n3 = 20
 ```
 
-![var_memory](/home/hanoul/Projects/Docs/images/var_memory.png)
+![var_memory](./images/var_memory.png)
 
 각 `n1`, `n2`, `n3`의 `PyTypeObject` 내부의 `*ob_type`은 자료형을 정의하는 객체를 가리키고 있다. 그렇다면, 자료형(Type) 정보를 저장한 객체는 어떻게 구성되어 있을까?
 
-![var_memory2](Python+.assets/var_memory2.png)
+![var_memory2](./images/var_memory2.png)
 
 `int `타입 객체 또한 다른 객체와 같이 `ob_refcnt(reference count)`와 `ob_type`을 기본적으로 가지고 있으며, 해당 타입을 설명하기 위한 추가 정보를 보관하고 있는 평범한 객체 중 하나일 뿐, 예약어가 아니다. 따라서, 다음과 같은 코드가 성립할 수 있다.
 
@@ -72,7 +72,7 @@ FLOAT = foo(int)
 f = FLOAT(10.1)  
 ```
 
-  
+<br>  
 
 ### 일급객체 (First-Class Object)
 
@@ -100,7 +100,7 @@ s2 = sorted(s, key=lambda x : len(x)) # 함수 대신 람다 표현식 사용
 print(s2)   # ['kiwi', 'apple', 'banana']
 ```
 
-
+<br>
 
 ### Python Class: Instance vs Static
 
@@ -126,7 +126,7 @@ n1 = Point(1, 2)
 n2 = Point(3, 4)
 ```
 
-![static_memory](Python+.assets/static_memory.png)
+![static_memory](./images/static_memory.png)
 
 
 
@@ -153,7 +153,7 @@ print(n2.count)    # 100
 
 **따라서 스태틱 필드에 접근할 땐, 클래스 이름을 사용해야만 안정적인 코드를 작성할 수 있다.**  
 
-
+<br>
 
 ### Python Class: Static method
 
@@ -186,7 +186,7 @@ Point.bar()         # 스태틱 메소드 호출. 클래스 이름으로 호출
 ```
 
 static method는 `@staticmethod` 데코레이터를 통해서도 선언이 가능하다. 해당 wrapper는 첫번째 인자로 넘겨지는 `self`를 사용하지 않고 제외시키는 기능을 수행한다.
-
+<br>
 
 
 ### Python Class: staticmethod vs classmethod 
@@ -211,7 +211,7 @@ print(child_class.output()) # 결과값 : child
 
 위 코드에서, `child_class` 라는 객체에서 호출된 `output() `메소드는 호출한 객체인 `child_class` 객체가 자동으로 인자로 전달되며, 해당 객체가 `test` 필드 값에 대해서 부모 클래스와는 별개의 값을 설정하고 있기 때문에 `parent`가 아닌 `child` 값을 리턴한다. 특히 상속 관계에서 해당 method들을 잘 구분하여 사용해야 한다.  
 
-
+<br>
 
 ### Python Underscore
 
@@ -237,7 +237,7 @@ print(child_class.output()) # 결과값 : child
     546  
     ```
 
-      
+<br>      
 
 2. 값을 무시하는 언더스코어
 
@@ -248,7 +248,7 @@ print(child_class.output()) # 결과값 : child
        print("hello")  
     ```
 
-      
+<br>      
 
 3. **import를 방지**하는 언더스코어
 
@@ -274,7 +274,7 @@ print(child_class.output()) # 결과값 : child
     NameError: name '_privateFunc' is not defined
     """
     ```
-
+<br>
       
 
 4. 사용제한 식별자를 회피하는 언더스코어
@@ -286,7 +286,7 @@ print(child_class.output()) # 결과값 : child
     del_ = data[1]
     ```
 
-      
+<br>      
 
 5. **맹글링(Mangling)**을 위한 더블 언더스코어
 
@@ -307,7 +307,7 @@ print(child_class.output()) # 결과값 : child
     print(order1.get_price()) # 3000. 같은 클래스 내부에서는 접근 가능
     ```
 
-      
+<br>      
 
 6. **스페셜 메소드(Special Methods)**를 위한 더블 언더스코어
 
@@ -328,7 +328,7 @@ print(child_class.output()) # 결과값 : child
     print(string1) # Object: Hello
     ```
 
-      
+<br>      
 
 7. **국제화(i18) / 지역화(i10)**에서의 언더스코어
 
@@ -343,7 +343,7 @@ print(child_class.output()) # 결과값 : child
         return HttpResponse(output)
     ```
 
-    
+<br>    
 
 8. 자릿수 구분자 언더스코어
 
@@ -377,7 +377,7 @@ print(child_class.output()) # 결과값 : child
     """
     ```
 
-    
+<br>    
 
 ###  `__dict__` , `__slots__`
 
@@ -415,7 +415,7 @@ print(dir(bar))
 ['__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', 'x', 'y']
 ```
 
-  
+<br>  
 
 ### Python Module
 
@@ -448,7 +448,7 @@ dir(mylib)
 """
 ```
 
-  
+<br>  
 
 ### Special Methods
 
@@ -473,7 +473,7 @@ dir(mylib)
     print(len(s))      # 7
     print(s.__len__()) # 7, 이렇게도 호출 가능
     ```
-
+<br>
 - `[]`
 
     배열에서 인덱스 접근에 `[]`를 사용한다. 이를 위해서 `__getitem__`이라는 스페셜 메소드를 정의해야 한다.
@@ -490,7 +490,7 @@ dir(mylib)
     
     print(s[1]) # bad 출력. s.__getitme__(1)과 동일
     ```
-
+<br>
 - 객체를 문자열로 변환
 
     객체를 문자열로 변환하기 위해서는 `__str__`이나 `__repr__` 메소드를 제공해야 한다.
@@ -519,7 +519,7 @@ dir(mylib)
     # point.__repr__(). 
     print(repr(point))  
     ```
-
+<br>
 - `callable object`
 
     `__call__` 스페셜 메소드를 사용하면 객체를 함수처럼 호출하여 사용`()`할 수 있다. 이를 통해서 callable object는 **객체의 상태를 가질 수 있는 함수**를 만들 수 있게 된다.
@@ -541,7 +541,7 @@ dir(mylib)
     print(plus.count) # 1
     ```
 
-      
+<br>      
 
 ### Getter & Setter, @property
 
@@ -624,7 +624,7 @@ person.name = 10                 # ValueError: name should be str type
 person.age = -100                # ValueError: age should be int type and not be negative
 ```
 
-  
+<br>  
 
 ### @dataclass
 
@@ -702,7 +702,7 @@ dataclasses.FrozenInstanceError: cannot assign to field 'admin'
 """
 ```
 
-  
+<br>  
 
 ### 다중 상속
 
@@ -743,12 +743,12 @@ super함수는 MRO 순서에서 타입으로 지정된 클래스의 '다음 순�
 """
 super(A, test).foo() # B의 foo 호출
 ```
-
+<br>
 #### 다이아몬드 상속과 super()
 
 그렇다면 다음과 같은 경우는 어떻게 생성하게 될까?
 
-![diamond_super](Python+.assets/diamond_super.png)
+![diamond_super](./images/diamond_super.png)
 
 ```python
 # 다이아몬드 상속 구조
