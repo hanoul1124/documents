@@ -2,6 +2,7 @@
 
   
 <br>
+
 ### Duck Typing
 
 #### 참조: https://nesoy.github.io/articles/2018-02/Duck-Typing
@@ -186,6 +187,7 @@ Point.bar()         # 스태틱 메소드 호출. 클래스 이름으로 호출
 ```
 
 static method는 `@staticmethod` 데코레이터를 통해서도 선언이 가능하다. 해당 wrapper는 첫번째 인자로 넘겨지는 `self`를 사용하지 않고 제외시키는 기능을 수행한다.
+
 <br>
 
 
@@ -274,6 +276,7 @@ print(child_class.output()) # 결과값 : child
     NameError: name '_privateFunc' is not defined
     """
     ```
+
 <br>
       
 
@@ -473,7 +476,9 @@ dir(mylib)
     print(len(s))      # 7
     print(s.__len__()) # 7, 이렇게도 호출 가능
     ```
+    
 <br>
+
 - `[]`
 
     배열에서 인덱스 접근에 `[]`를 사용한다. 이를 위해서 `__getitem__`이라는 스페셜 메소드를 정의해야 한다.
@@ -490,7 +495,9 @@ dir(mylib)
     
     print(s[1]) # bad 출력. s.__getitme__(1)과 동일
     ```
+    
 <br>
+
 - 객체를 문자열로 변환
 
     객체를 문자열로 변환하기 위해서는 `__str__`이나 `__repr__` 메소드를 제공해야 한다.
@@ -518,8 +525,10 @@ dir(mylib)
     print(str(point))
     # point.__repr__(). 
     print(repr(point))  
+    
     ```
 <br>
+
 - `callable object`
 
     `__call__` 스페셜 메소드를 사용하면 객체를 함수처럼 호출하여 사용`()`할 수 있다. 이를 통해서 callable object는 **객체의 상태를 가질 수 있는 함수**를 만들 수 있게 된다.
@@ -743,7 +752,9 @@ super함수는 MRO 순서에서 타입으로 지정된 클래스의 '다음 순�
 """
 super(A, test).foo() # B의 foo 호출
 ```
+
 <br>
+
 #### 다이아몬드 상속과 super()
 
 그렇다면 다음과 같은 경우는 어떻게 생성하게 될까?
